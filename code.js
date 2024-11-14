@@ -1,16 +1,12 @@
 function flip(array, n) {
-    if(n > array.length + 1){
-        n = array.length + 1
+    if(n > array.length){
+        n = array.length
     }
-    var j = n * 2;
-    n--;
-    for (let i = 0; i < j; i++) {
-        for (let index = 0; index < n ; index++) {
-            const element = array[index];
-            array[index] = array[index + 1];
-            array[index + 1] = element;
-        }
-        n--;
+    let top = 0, bottom = n - 1
+    while(top < bottom){
+        [array[top], array[bottom]] = [array[bottom], array[top]];
+        top++;
+        bottom--;
     }
     return array;
 }
