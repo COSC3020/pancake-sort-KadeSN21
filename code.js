@@ -3,14 +3,14 @@ function flip(array, n) {
         n = array.length + 1
     }
     var j = n * 2;
-    n = n - 1;
+    n--;
     for (let i = 0; i < j; i++) {
         for (let index = 0; index < n ; index++) {
             const element = array[index];
             array[index] = array[index + 1];
             array[index + 1] = element;
         }
-        n = n - 1;
+        n--;
     }
     return array;
 }
